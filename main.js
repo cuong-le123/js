@@ -100,3 +100,44 @@ var myArray = [
 ];
 console.log(myArray)
 console.log(typeof myArray);
+
+/*
+Toán tử so sánh 
+==      -->     Bằng
+!=      -->     Không bằng
+>       -->     Lớn hơn 
+<       -->     Bé hơn
+>=      -->     Lớn hơn hoặc bằng
+<=      -->     Bé hơn hoặc bằng
+So sánh  tuyệt đối
+===     -->     Bằng 
+!==     -->     Không bằng 
+*/
+
+var a = 1;
+var b = '1';
+
+if(a == b){
+    console.log ('true');
+}else{
+    console.log ('false')
+}
+
+if(a === b){
+    console.log ('true');
+}else{
+    console.log ('false')
+}
+
+if(a != b){
+    console.log ('true');
+}else{
+    console.log ('false')
+}
+
+if(a !== b){
+    console.log ('true');
+}else{
+    console.log ('false')
+}
+
