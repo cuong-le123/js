@@ -202,4 +202,29 @@ console.log(fullName3);
 (backslash in JS) */
 var fullName4 = 'Quốc Cường \'SuperMan\'';
 console.log(fullName4);
+//3. Kiểm tra độ dài chuỗi 
+console.log('Độ dài chuỗi:',fullName4.length);
 
+/*4. Chú ý độ dài khi viết code
+Độ dài khi viết code tối đa 80 ký tự hoặc sử dụng nối chuỗi*/
+
+var fullName5 =
+'Quốc Cường \'SuperMan\''
++ 'Quốc Cường \'SuperMan\''
++ 'Quốc Cường \'SuperMan\''
++ 'Quốc Cường \'SuperMan\'';
+
+console.log(fullName5);
+
+/*5. Template string ES6*/
+
+var firstName = 'Cường';
+var lastName = 'Lê';
+
+console.log(`Tôi là: ${firstName} ${lastName}`);
+
+/*LÀM VIỆC VỚI CHUỖI
+1. Lenght
+2. Find index
+3. Cut string
+4. Replace*/
