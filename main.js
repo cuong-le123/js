@@ -223,8 +223,112 @@ var lastName = 'Lê';
 
 console.log(`Tôi là: ${firstName} ${lastName}`);
 
-/*LÀM VIỆC VỚI CHUỖI
-1. Lenght
+/*
+LÀM VIỆC VỚI CHUỖI
+1. Length
 2. Find index
 3. Cut string
-4. Replace*/
+4. Replace
+5. Convert to upper case
+6. Convert to lower case
+7. Trim
+8. Split
+9. Get a character by index
+*/
+// Keyword: Javascript string methods
+
+var myString = '   Le Quoc Cuong Le Quoc Cuong Le Quoc Cuong'   ;
+
+//1.Length: Đo độ dài chuỗi 
+console.log(myString.length);
+//2. Find index: Tìm vị trí của một ký tự trong chuỗi 
+console.log(myString.indexOf('Quoc'));
+//Lưu ý: 
+//- Nếu ký tự trong chuỗi không có thì nó sẽ trả về giá trị là -1
+console.log(myString.indexOf('ABC'));
+//- indexOf chỉ kiếm ký tự đầu tiên trong chuỗi mà nó tìm được 
+console.log(myString.indexOf('Quoc', 4));
+//- Nếu muốn tìm ký tự cuối cùng ở trong chuỗi thì chúng ta sử dụng lệnh lastIndexOf
+console.log(myString.lastIndexOf('Quoc'));
+//search
+console.log(myString.search('Quoc'));
+//3. Cut string: Cắt Chuỗi
+console.log(myString.slice(0, 13));
+//Lưu ý:
+// Chúng ta có thể cắt từ phải qua trái nhưng tham số phải nhập là số âm
+console.log(myString.slice(-19, -14))
+//4. Replace: ghi đè lên chuỗi
+console.log(myString.replace('Cuong','Huy'));
+//Lưu ý:
+// Nếu sử dụng cú pháp như trên thì chúng chỉ thay thế ký tự đầu tiên nó tìm được và chúng không thay thế các ký tự sau.
+// Khi đó chúng ta sử dụng cú pháp sau:
+console.log(myString.replace(/Cuong/g, 'Huy'));
+// Với cú pháp này chúng ta đã khắc phục vấn đề trên 
+//5. Convert to upper case: Chuyển đổi tất cả chỗi thành chữ hoa
+console.log(myString.toUpperCase());
+//6. Convert to lower case: Chuyển đổi tất cả chỗi thành chữ thường
+console.log(myString.toLowerCase());
+//7. Trim: xử lý dữ liệu được nhập vào 
+console.log(myString.trim());
+//8. Split: cắt một chuỗi thành 1 array dựa vào điểm chung 
+var languages ='C++, C#, Ruby, PHP'
+console.log(languages.split(', '));
+var ten = 'CUONG';
+console.log(ten.split(''));
+//9. Get a character by index: lấy 1 ký tự bởi một index cho trước 
+const ten1 = 'Cuong Le';
+console.log(ten1.charAt(1));
+console.log(ten1[2]);
+
+/*
+Kiểu số (Number) trong Javascript
+1. Tạo giá trị Number
+  - Các Cách tạo
+  - Dùng cách nào? Tại sao?
+  - Kiểm tra data type
+2. Làm việc với Number
+  - To string
+  - To Fixed  
+Keyword: Javascript number methods
+*/
+//1. Tạo giá trị Number
+//Các Cách tạo number
+
+//cách 1: (khuyên dùng)
+var age1 = 18 ;
+var PI = 3.14 ;
+//cách 2:
+var otherNumber = new Number(9);
+// Kiểm tra data type
+console.log(typeof age1);
+//Lưu ý: Khi sử dụng phép toán không hợp lệ thì nó sẽ trả về là NaN ( NaN biểu diễn 1 số không hợp lệ vì kiểm tra typeof nó sẽ ra là number)
+var number1 = 20/'abc';
+var number2 = 100/1;
+console.log('Kết quả là:' , number1);
+console.log('Kiểu dữ liệu là:' , typeof number1);
+// Cách kiểm tra như thế nào là NaN
+console.log('number1 có phải là NaN không?',isNaN(number1));
+console.log('number2 có phải là NaN không?',isNaN(number2));
+//2. Làm việc với Number
+//To string: chuyển đổi từ kiểu số sang kiểu String
+var age2 = 10;
+console.log(age2);
+console.log('Kiểu dữ liệu của age2 là:',typeof age2);
+console.log(age2.toString());
+console.log('Kiểu dữ liệu của age2 là:',typeof age2.toString());
+
+//To fixed: làm tròn số
+//Lưu ý:
+//- với giá trị thập phân < 5 thì sẽ làm tròn xuống
+//- với giá trị thập phân >= 5 thì sẽ làm tròn lên
+var number3 = 3.4;
+var number4 = 3.5;
+console.log('number3:',number3);
+console.log('number4:',number4);
+console.log('Số number3 sau khi được làm tròn là:',number3.toFixed());
+console.log('Số number4 sau khi được làm tròn là:',number4.toFixed());
+
+
+var number5 = 123.123456789
+console.log('Số sau khi được làm tròn là:',number5.toFixed(3));
+//console.log(number5.toFixed(3)); là chỉ lấy 3 số sau phần thập phân
