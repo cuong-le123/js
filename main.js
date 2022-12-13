@@ -306,7 +306,7 @@ var number1 = 20/'abc';
 var number2 = 100/1;
 console.log('Kết quả là:' , number1);
 console.log('Kiểu dữ liệu là:' , typeof number1);
-// Cách kiểm tra như thế nào là NaN
+// Cách kiểm tra NaN
 console.log('number1 có phải là NaN không?',isNaN(number1));
 console.log('number2 có phải là NaN không?',isNaN(number2));
 //2. Làm việc với Number
@@ -338,8 +338,168 @@ Mảng trong JS (Array)
 1. Tạo Mảng
   - Cách tạo
   - Sử dụng cách nào? Tại sao?
-  - Kiểm tra data type
+  - Kiểm tra data type (type of)
 2. Truy xuất mảng
   - Độ dài mảng
   - Lấy phần tử theo index
 */
+//1. Tạo Mảng
+//- Cách tạo
+// Cách 1: (khuyên dùng)
+var languages1 = [
+  'JS',
+  'PHP',
+  'RUPY',
+  'DART',
+  null,
+  undefined,
+  function(){
+
+  },
+  {},
+  123,
+];
+
+console.log(languages1);
+//Cách 2:
+var languages2 = new Array(
+  'JS',
+  'PHP',
+  'RUPY',
+  'DART',
+  null,
+  undefined,
+  function(){
+
+  },
+  {},
+  123,
+);
+
+console.log(languages2);
+
+//cách kiểm tra
+console.log(Array.isArray(languages1));
+
+//2. Truy xuất mảng
+//- Độ dài mảng
+console.log('Độ dài mảng languages1 là:',languages1.length);
+//- Lấy phần tử theo index
+console.log(languages1[3]);
+
+/*
+Làm việc với mảng
+
+1. To string
+2. Join
+3. Pop
+4. Push
+5. Shift
+6. Unshift
+7. Splicing
+8. Concat
+9. Slicing
+Keyword: Javascript array methods
+*/
+
+
+//1. To string
+var languages3 = [
+  'JS',
+  'PHP',
+  'RUPY',
+  'DART',
+];
+console.log(languages3.toString());
+console.log(typeof languages3.toString());
+//2. Join
+var languages4 = [
+  'JS',
+  'PHP',
+  'RUPY',
+  'DART',
+];
+console.log(languages4.join(', '));
+//3. Pop: Xóa element cuối mảng và trả về phần tử đã xóa
+var languages5 = [
+  'JS',
+  'PHP',
+  'RUPY',
+  'DART',
+];
+console.log('Phần tử đã xóa là:',languages5.pop());
+console.log(languages5);
+//4. Push: Thêm phần tử vào cuối mảng
+var languages6 = [
+  'JS',
+  'PHP',
+  'RUPY',
+  'DART',
+];
+console.log(languages6.push('C++','C#'));
+console.log(languages6);
+//5. Shift: Xóa element đầu mảng và trả về phần tử đã xóa
+var languages7 = [
+  'JS',
+  'PHP',
+  'RUPY',
+  'DART',
+];
+console.log('Phần tử đã xóa là:',languages7.shift());
+console.log(languages7);
+//6. Unshift: Thêm phần tử vào đầu mảng
+var languages8 = [
+  'JS',
+  'PHP',
+  'RUPY',
+  'DART',
+];
+console.log(languages8.unshift('C++','C#'));
+console.log(languages8);
+//7. Splicing
+//- Xóa
+var languages9 = [
+  'JS',
+  'PHP',
+  'RUPY',
+  'DART',
+];
+languages9.splice(1, 2);
+console.log(languages9);
+//- Chèn
+var languages10 = [
+  'JS',
+  'PHP',
+  'RUPY',
+  'DART',
+];
+languages10.splice(1, 0,'C++','C#' );
+console.log(languages10);
+//8. Concat: nối mảng
+var languages11 = [
+  'JS',
+  'PHP',
+  'RUPY',
+  'DART',
+];
+
+var languages12 =[
+  'C++',
+  'C#',
+];
+
+console.log(languages11.concat(languages12));
+console.log(languages12.concat(languages11));
+//9. Slicing: Cắt toàn bộ hoặc 1 vài element
+var languages13 = [
+  'JS',
+  'PHP',
+  'RUPY',
+  'DART',
+  'C++',
+  'C#',
+];
+
+console.log(languages13.slice(1, 2));
+
+
