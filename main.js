@@ -332,3 +332,14 @@ console.log('Số number4 sau khi được làm tròn là:',number4.toFixed());
 var number5 = 123.123456789
 console.log('Số sau khi được làm tròn là:',number5.toFixed(3));
 //console.log(number5.toFixed(3)); là chỉ lấy 3 số sau phần thập phân
+
+/*
+Mảng trong JS (Array)
+1. Tạo Mảng
+  - Cách tạo
+  - Sử dụng cách nào? Tại sao?
+  - Kiểm tra data type
+2. Truy xuất mảng
+  - Độ dài mảng
+  - Lấy phần tử theo index
+*/
