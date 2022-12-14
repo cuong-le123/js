@@ -19,7 +19,8 @@ if (a > 0 || b < 0) {
   console.log("FALSE");
 }
 
-/*Kiểu dữ liệu trong JS
+/*
+Kiểu dữ liệu trong JS
 1. Primitive Data
     - Number
     - String
@@ -502,4 +503,156 @@ var languages13 = [
 
 console.log(languages13.slice(1, 2));
 
+/*
+Hàm (function) trong JS
+1. Hàm là gì?
+  - Một khối mã 
+  - Làm 1 việc cụ thể
+
+2. Các loại hàm 
+  - Built-in
+    + Alert
+    + Console
+    + Confirm
+    + Prompt
+    + setTimeout
+    + setInterval
+  - Tự định nghĩa
+
+3. Tính chất
+  - Không thực thi khi định nghĩa 
+  - Sẽ thực thi khi được gọi
+  - Có thể nhận tham số
+  - Có thể trả về một giá trị
+
+4. Tạo hàm đầu tiên
+*/
+
+//Tạo hàm đầu tiên
+//Quy tắc đặt tên: có thể sử dụng a-z A-Z 0-9 _ $ 
+//Lưu ý: không được đặt chữ số ngày đầu tiên
+
+function showDialog(){
+  alert('Xin Chào Các Bạn Đến Với JAVASCRIPT BASIC ')
+}
+
+showDialog();
+
+/*
+  Tham số hàm
+1. Tham số?
+  - Định nghĩa?
+  - Kiểu dữ liệu?
+  - Tính private?
+  - 1 tham số 
+  - Nhiều tham số
+
+2. Truyền tham số 
+  - Truyền 1 tham số
+  - Truyền nhiều tham số
+
+3. Arguments?
+  - Đối tượng 
+  - Giới thiệu vòng for of
+*/ 
+
+//Kiểu dữ liệu?
+function showDialog1(name){
+  console.log(name);
+}
+
+showDialog1('Cường');//
+
+function showDialog2(number){
+  console.log(number);
+}
+//Truyền 1 tham số 
+showDialog2(123);
+
+function showDialog3(array){
+  console.log(array);
+}
+
+showDialog3(['A','B','C']);
+//Truyền nhiều tham số
+function showDialog4(array1, array2){
+  console.log(array1);
+  console.log(array2);
+}
+
+showDialog4(['A','B','C'],['D','E','F']);
+
+//Arguments
+
+function showDialog5(){
+  console.log(arguments);
+}
+
+showDialog5(['A','B','C'],['D','E','F']);
+
+//Vòng for of
+function showDialog6(){
+  var myString1 ='';
+  for (var param1 of arguments){
+      myString1 += `${param1}-`
+  }
+  console.log(myString1)
+}
+
+showDialog6(['A','B','C'],['D','E','F'],['G','K','L'], 1, 2, 3, 4);
+
+//Return trong hàm 
+var isConfirm = confirm('Hello?');
+console.log('Kết Quả (true = ok, false = cancel): ',isConfirm);
+
+function plus (a, b){
+  return a + b;
+}
+var result4 = plus(8, 8);
+console.log('Kết quả của phép cộng là: ',result4);
+
+/*
+Một số điều cần biết về function
+
+1. Khi đặt cùng tên thì hàm định nghĩa sau được ưu tiên
+2. Có thể khai báo biến trong hàm 
+3. Định nghĩa hàm trong hàm
+*/
+
+//1. Khi đặt cùng tên thì hàm định nghĩa sau được ưu tiên
+function showDialog7(){
+  console.log('Số được in ra là: 1');
+}
+
+function showDialog7(){
+  console.log('Số được in ra là: 2');
+}
+
+function showDialog7(){
+  console.log('Số được in ra là: 3');
+}
+
+showDialog7();
+
+//2. Có thể khai báo biến trong hàm 
+function showDialog8(){
+  var myString2 ='Cường Lê';
+  console.log(myString2)
+}
+
+showDialog8();
+
+//3. Định nghĩa hàm trong hàm
+
+function showDialog9(){
+  function showDialog10(){
+    console.log('Lê Quốc Cường');
+    function showDialog11(){
+      console.log('Lê Quốc Cường1');
+    }
+    showDialog11();
+  }
+  showDialog10();
+}
+showDialog9();
 
