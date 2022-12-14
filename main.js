@@ -656,3 +656,89 @@ function showDialog9(){
 }
 showDialog9();
 
+/*Các loại function
+1. Declaration
+2. Expression
+3. Arrow 
+*/
+
+//1. Declaration
+
+function showDialog12(){
+  var myString2 ='Cường Lê';
+  console.log(myString2)
+}
+
+showDialog12();
+
+//2. Expression
+
+var showDialog13 = function testName(){
+
+}
+
+setTimeout(function testName(){
+
+});
+
+var myObject1 = {
+  myFunction1: function testName(){
+
+  }
+}
+
+/*
+Polyfill
+*/
+
+if (!Array.prototype.includes) {
+  Array.prototype.includes = function (search, start) {
+    'use strict';
+    if(search instanceof RegExp){
+      throw TypeError('first argument must not be a RegExp')
+    }
+    if (start === undefined){ start = 0;}
+    return this.indexOf(search, start) !== -1
+  };
+}
+
+if (!String.prototype.includes) {
+  String.prototype.includes = function includes(searchElement) {
+    return this.indexOf(searchElement) !== -1
+  }
+}
+
+//object
+var heigthKey = 'heigth';
+
+var myInfo = {
+    name: 'Quoc Cuong',
+    age3: 25,
+    address: 'Vinh-Nghe An',
+    [heigthKey]:'160cm'
+};
+
+var myKey = 'address'
+myInfo.email = 'lequocc31@gmail.com'
+
+delete myInfo.age3;//delete
+
+console.log(myInfo)
+console.log('Tên: ',myInfo.name);
+console.log('Tuổi: ',myInfo.age3);
+console.log('Địa chỉ: ',myInfo[myKey]);
+
+
+var heigthKey1 = 'heigth';
+
+var myInfo1 = {
+  name1: 'Le Quoc Cuong',
+  age4: 25,
+  address1: 'Vinh-Nghe An',
+  [heigthKey1]:'160cm',
+  getName: function(){
+    return this.name1
+  }
+};
+
+console.log(myInfo1.getName());
