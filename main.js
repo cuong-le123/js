@@ -715,16 +715,16 @@ var myInfo = {
     name: 'Quoc Cuong',
     age3: 25,
     address: 'Vinh-Nghe An',
-    [heigthKey]:'160cm'
+    [heigthKey]:'160cm'//thêm phần tử khi sử dụng 1 biến 
 };
 
 var myKey = 'address'
-myInfo.email = 'lequocc31@gmail.com'
-
+myInfo.email = 'lequocc31@gmail.com';//thêm key mới
+myInfo['my-email'] = 'lequoccuong1234aa@gmail.com';//thêm key mới nhưng chứa ký tự lỗi
 delete myInfo.age3;//delete
 
 console.log(myInfo)
-console.log('Tên: ',myInfo.name);
+console.log('Tên: ',myInfo.name);//lấy tên
 console.log('Tuổi: ',myInfo.age3);
 console.log('Địa chỉ: ',myInfo[myKey]);
 
@@ -735,10 +735,204 @@ var myInfo1 = {
   name1: 'Le Quoc Cuong',
   age4: 25,
   address1: 'Vinh-Nghe An',
-  [heigthKey1]:'160cm',
+  [heigthKey1]:'160cm', //thêm phần tử khi sử dụng 1 biến 
   getName: function(){
-    return this.name1
+    return this.name1;
   }
 };
 
+//Function ==> Phương thức / method
+//Others ==> Thuộc tính / property
+
 console.log(myInfo1.getName());
+
+//Lưu ý: nếu muốn hợp lý hóa key vi phạm quy tắc đặt tên hàm tên biến thì chúng ta phải biến key thành chuỗi 
+
+//Object constructor 
+
+function User(firstName1, lastName1, avatar) {
+  this.firstName1 = firstName1;
+  this.lastName1 = lastName1;
+  this.avatar = avatar; 
+  this.getName1 = function(){
+    return`${this.firstName1} ${this.lastName1}`
+  };
+}
+
+var author = new User('Sơn','Đặng', 'Avartar');
+var user = new User('Sơn1','Đặng1', 'Avartar');
+
+console.log(author.getName1());
+console.log(user.getName1());
+
+/*
+Ovject prototybe
+1. Prototype là gì?
+2. Khi nào sử dụng ?
+*/
+
+function User1(firstName2, lastName2, avatar1) {
+  this.firstName2 = firstName2;
+  this.lastName2 = lastName2;
+  this.avatar1 = avatar1; 
+  
+  this.getName2 = function(){
+    return`${this.firstName2} ${this.lastName2}`
+  };
+}
+
+User1.prototype.className = '12A1';// -tạo thêm thuộc tính className bằng cách dùng prototype và nó nằm trong phần __proto__
+User1.prototype.getClassName = function(){
+  return this.className
+}
+
+var user1 = new User1('Sơn2','Đặng2', 'Avartar');
+var user2 = new User1('Sơn3','Đặng3', 'Avartar');
+
+console.log(user1.className) ;
+console.log(user2.getClassName()) ;
+
+//Date giá trị thời gian 
+
+var date = new Date();
+console.log(date);
+
+var year = date.getFullYear();
+var month = date.getMonth() + 1;// vì khi trả về từ 0 - 11 nên chúng ta +1 
+var day = date.getDate();
+
+console.log (`${day}/${month}/${year}`);
+
+// câu lệnh rẽ nhánh if - esle
+
+var date1 = 3;
+
+if (date1 === 2){
+  console.log('Thứ 2');
+}else if (date1 === 3){
+  console.log('Thứ 3');
+}else if (date1 === 4){
+  console.log('Thứ 4');
+}else if (date1 === 2){
+  console.log('Thứ 5');
+}else if (date1 === 2){
+  console.log('Thứ 6');
+}else if (date1 === 7){
+  console.log('Thứ 7');
+}else if (date1 === 8){
+  console.log('Chủ Nhật');
+}else {
+  console.log('Không có thứ này!')
+}
+
+/*Lưu ý: Khi sử dụng if - esle có nhiều điều kiện 
+nếu nó kiểm tra  từng điều kiện 
+nếu điều kiện 1 đúng thì nó sẽ không kiểm tra nữa*/
+
+//Câu lệnh rẽ nhánh Switch - case
+
+var date2 = 2;
+
+switch(date2){
+  case 2: 
+    console.log('Thứ 2');
+    break;
+  case 3: 
+    console.log('Thứ 3');
+    break; 
+  case 4: 
+    console.log('Thứ 4');
+    break;
+  case 5: 
+    console.log('Thứ 5');
+    break; 
+  case 6: 
+    console.log('Thứ 6');
+    break; 
+  case 7: 
+    console.log('Thứ 7');
+    break; 
+  case 8: 
+    console.log('Chủ Nhật');
+    break;
+  default:
+    console.log('Không có thứ phù hợp!')      
+}
+
+//lưu ý : khi biết trước giá trị thì sử dụng switch - case (phải có ít nhất 3 case) 
+// if -esle: < > !==
+
+// toán tử 3 ngôi - Ternary operator
+
+var course = {
+  name: 'JAVASCRIPT',
+  coin: 250,
+};
+
+/*if(course.coin > 0 ){
+  console.log(`${course.coin} Coins`);
+}else{
+  console.log('Free');
+}*/
+
+var result5 = course.coin > 0 ? `${course.coin} Coins` : 'Free';
+console.log('Giá:',result5);
+
+
+/* Vòng lặp - loop
+1. for - Lặp với điều kiện đúng
+2. for/in - lặp qua key của đối tượng 
+3. for/of - lặp qua value của đối tượng 
+4. while - lặp khi điều kiện đúng
+5. do/while - lặp 1 lần, sau đó lặp khi điều kiện đúng */
+
+//1. for
+for(var i = 0; i < 100 ; i++){
+  console.log(i);
+}
+
+
+var myArray1 = [
+  'java',
+  'c++',
+  'php',
+  'js',
+  'python',
+  'ruby',
+  'dart',
+]
+
+var arrayLength = myArray1.length;
+
+for (var i = 0; i < arrayLength; i++ ){
+  console.log(myArray1[i]);
+}
+
+
+//2. for/in
+
+
+var myInfo2 = {
+  name1: 'Le Quoc Cuong',
+  age4: 25,
+  address1: 'Vinh-Nghe An',
+};
+
+for( var key in myInfo2){
+  console.log( key );
+  console.log( myInfo2[key]);
+}
+
+var myArray2 = [
+  'java',
+  'c++',
+  'php',
+  'js',
+  'python',
+  'ruby',
+  'dart',
+];
+
+for(var key in myArray2){
+  console.log(myArray2[key])
+}
