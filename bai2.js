@@ -9,27 +9,27 @@
 // neu delta = 0 => x = -b / 2a
 // neu delta >0 => x1 = -(b + Math.sqrt(delta)) / 2*a , x2 = -(b - Math.sqrt(delta)) / 2*a
 
-var a1 = 2, b1 = 10, c = 3;
-function phuongtrinhbac2(a1,b1,c){
-    if(a1 = 0){
-       var  x1 = -c/b1;
-       console.log('phuong trinh co nghiem x:',x1)
+var a = 2, b = 10, c = 3;
+function phuongtrinhbac2(a,b,c){
+    if(a === 0){
+       var  x = -c/b;
+       console.log('phuong trinh co nghiem x:',x)
     }
     else{
-        var delta = b1*b1-4*a1*c;
+        var delta = b*b-4*a*c;
         if(delta < 0){
             console.log('Phuong trinh vo nghiem');
         }
-        if(delta = 0){
-            var x2 = -b1/(2*a);
-            console.log('phuong trinh co nghiem kep:',x2);
+        if(delta === 0){
+            var x1 = -b/(2*a);
+            console.log('phuong trinh co nghiem kep:',x);
         }
         if(delta > 0){
-            var x3 = -(b1 + Math.sqrt(delta)) / (2*a1);
-            var x4 = -(b1 - Math.sqrt(delta)) / (2*a1);
-            console.log('phuong trinh co 2 nghiem phan biet: ',x3, x4)
+            var x2 = -(b + Math.sqrt(delta)) / (2*a);
+            var x3 = -(b - Math.sqrt(delta)) / (2*a);
+            console.log('phuong trinh co 2 nghiem phan biet: ',x1, x2)
     }
-    return x1,x2,x3,x4;
+    return x,x1,x2,x3;
     }  
 }
-phuongtrinhbac2(a1,b1,c);  
+phuongtrinhbac2(a,b,c);  
