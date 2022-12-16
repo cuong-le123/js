@@ -936,3 +936,5 @@ var myArray2 = [
 for(var key in myArray2){
   console.log(myArray2[key])
 }
+
+
