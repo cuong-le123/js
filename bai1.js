@@ -2,16 +2,23 @@
 //buoc 1: nguoi dung nhap a va b 
 //buoc 2: x = -b/a
 
-var a = 5;
+var a = 0;
 var b = 6;
 
-function phuongtrinhbacnhat (a,b){
-    var x = -b/a;
-    console.log('a:',a);
-    console.log('b:',b);
-    console.log('gia tri x cua phuong trinh ax + b = 0 la:',x);
+function tinhphuongtrinhbacnhat(a1,b1) {
+    var x;
+    if(a1 === 0 && b1 === 0 ) {
+        console.log('Phương trình vô nghiệm.');
+    }else if (a1 !== 0 && b1 === 0) {
+        x = -b1/a1;
+        console.log('Phương trình có nghiệm:',x);
+    }else if (a1 === 0 && b1 !== 0){
+        console.log('Phương trình vô nghiệm.');
+    }else if(a1 !== 0 && b1 !== 0) {
+        x = -b1/a1;
+        console.log('Phương trình có nghiệm:',x);
+    }
     return x;
 }
-phuongtrinhbacnhat(a,b);
-
-
+var kq = tinhphuongtrinhbacnhat(a,b);
+console.log(kq);
