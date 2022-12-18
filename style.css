@@ -12,10 +12,6 @@
     position: relative;
 }
 
-h2,h4{
-    padding: 10px 0;
-}
-
 input{
     height: 40px;
     width:300px;
