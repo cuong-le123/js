@@ -56,16 +56,16 @@ function giaipt(){
     var b = parseFloat(document.dataform.b.value);
     var ketqua = "Phương Trình "+ a +"x + "+ b +" = 0 <br>";
     if(a === 0 && b === 0 ) {
-        ketqua += "vô số nghiệm"
+        ketqua += "Vô số nghiệm"
     } 
     if (a !== 0 && b === 0) {
-        ketqua += "có nghiệm:" + (-b/a);
+        ketqua += "Có nghiệm:" + (-b/a);
     } 
     if (a === 0 && b !== 0){
-        ketqua += "vô nghiệm" ;
+        ketqua += "Vô nghiệm" ;
     } 
     if(a !== 0 && b !== 0) {
-        ketqua += "có nghiệm:" + (-b/a);
+        ketqua += "Có nghiệm x = " +  (-b/a);
     }
     document.getElementsByClassName("ketqua")[0].innerHTML = ketqua ;
 }
