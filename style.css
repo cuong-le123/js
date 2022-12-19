@@ -3,12 +3,12 @@
   box-sizing: border-box;
 }
 
-#main {
+/* #main {
     display: flex;
-}
+} */
 
 .form-group{
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     position: relative;
 }
 
@@ -23,7 +23,6 @@ input{
     border: 1px solid #dedce0;
     border-radius: 5px;
     padding: 10px;
-    font-size: inherit;/*inherit: dùng để kế thừa font của thẻ cha*/
     color: #202124;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
@@ -34,9 +33,12 @@ input{
 label{
     position: absolute;
     pointer-events: none;
-    transform: translateY(-100%);
+    transform: translateY(-120%);
     background: #fff;
-    transition: all 0.3s ease-in-out;
+}
+
+.form-group input:focus{
+    border: 1px solid #000;
 }
 
 button{
@@ -49,4 +51,19 @@ button{
 
 button:hover {
     background-color: #dedce0;
+}
+
+span{
+    position: absolute;
+    transform: translateY(238%);
+    left: 0;
+}
+
+.ketqua{
+    border: 1px solid #dedce0;
+    height: 100px;
+    width: 300px;
+    background-color: #fff;
+    margin: 20px 0;
+    border-radius: 5px;
 }
