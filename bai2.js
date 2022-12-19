@@ -9,9 +9,11 @@
 // neu delta = 0 => phuong trinh co nghiem kep x = -b / 2a
 // neu delta > 0 => x1 = -(b + Math.sqrt(delta)) / 2*a , x2 = -(b - Math.sqrt(delta)) / 2*a
 
-var a = 4, b = 2, c = 0;
-function tinhphuongtrinhbac2(a,b,c) {
-    var ketqua = { x1, x2 };
+function giaipt() {
+    var a = parseFloat(document.dataform.a.value);//parseFloat: biến kiểu string -> number 
+    var b = parseFloat(document.dataform.b.value);
+    var c = parseFloat(document.dataform.c.value);
+    var ketqua = "Phương Trình "+ a +"x^2 +"+ b +"x "+ c + "= 0 <br>";
     if(a === 0){
        var  x = -c/b;
        ketqua.x1 = x;
@@ -36,8 +38,7 @@ function tinhphuongtrinhbac2(a,b,c) {
             ketqua.x2 = x3;
             console.log('Phương trình có 2 nghiệm phân biệt','x1:',x2,'x2:', x3)
         }
+        document.getElementsByClassName("ketqua")[2].innerHTML = ketqua ;
     }
-    return ketqua;
+    
 }
-var kq = tinhphuongtrinhbac2(a,b,c);
-console.log(kq);
