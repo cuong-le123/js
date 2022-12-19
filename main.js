@@ -746,7 +746,7 @@ var myInfo1 = {
 
 console.log(myInfo1.getName());
 
-//Lưu ý: nếu muốn hợp lý hóa key vi phạm quy tắc đặt tên hàm tên biến thì chúng ta phải biến key thành chuỗi 
+//Lưu ý: nếu muốn hợp lý hóa key vi phạm quy tắc đặt tên hàm, tên biến thì chúng ta phải biến key thành chuỗi 
 
 //Object constructor 
 

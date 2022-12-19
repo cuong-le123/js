@@ -9,20 +9,31 @@
 </head>
 <body>
     <div id="main">
-        <form action="">
+        <form action="" id="form-1">
             <h2>Giải Phương Trình Bậc 1 (ax + b = 0)</h2>
             <h4>Vui Lòng Nhập Giá Trị a Và b</h4>
             <div class="form-group">
-                <label for="">Giá Trị a</label>
-                <input type="text" name="a">
+                <label for="a" class="form-label">Giá Trị a</label>
+                <input type="text" name="a" id="numbera" placeholder="VD: 1">
             </div>
             <div class="form-group">
                 <label for="">Giá Trị b</label>
-                <input type="text" name="b">
+                <input type="text" name="b" id="numberb" placeholder="VD: 2">
             </div>
-            <input type="submit" value="Nghiệm của phương trình" id="btn">
+            <button onclick="changeResult('Result');">Kết Quả</button>
         </form>
     </div>
     <script src="bai1.js"></script>
+    <script>
+
+        Validator({
+            form: '#form-1',
+            rules:[
+                Validator.isRequired('#numbera'),
+                Validator.isRequired('#numberb'),
+            ]
+        })
+
+    </script>
 </body>
 </html>

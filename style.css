@@ -39,3 +39,14 @@ label{
     transition: all 0.3s ease-in-out;
 }
 
+button{
+    height: 40px;
+    width:300px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #dedce0;
+}
