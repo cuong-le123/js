@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Giải phương trình bậc 2</title>
 </head>
 <body>
     <div id="main">
         <form action=""  name="dataform">
-            <h2>Giải Phương Trình Bậc 2 (ax^2 + bx +c = 0)</h2>
+            <h2>Giải Phương Trình Bậc 2 </h2>
             <h4>Vui Lòng Nhập Giá Trị a, b, c</h4>
             <div class="form-group">
                 <label for="a" class="form-label">Giá Trị a</label>
@@ -24,10 +24,50 @@
                 <label for="a" class="form-label">Giá Trị c</label>
                 <input type="text" name="c" id="numberc" placeholder="VD: 3">
             </div>
-        <button type="button" onclick="giaipt()">Giải phương trình</button>
+        <button type="button" onclick="giaipt1()">Giải phương trình</button>
         </form>
         <div class="ketqua"></div>
     </div>
-    <script src="bai2.js"></script>
+    <script>
+        function giaipt1() {
+        var a = parseFloat(document.dataform.a.value);//parseFloat: biến kiểu string -> number nếu string là chuỗi thì nó trả về là NaN
+        var b = parseFloat(document.dataform.b.value);
+        var c = parseFloat(document.dataform.c.value);
+        var ketqua1 = "Phương Trình "+ a +"x^2 +"+ b +"x "+ c + "= 0 <br>";
+        if (a === 0 && b === 0 && c === 0){
+            ketqua1 += "phương trình có vô số nghiệm";
+        }
+        
+        if(a === 0 && b === 0 && c !== 0){
+            ketqua1 += "phương trình vô nghiệm";
+        }
+        
+        if(a === 0 && b !==0 && c === 0){
+            ketqua1 += " phương trình có nghiệm là 0";
+        }
+
+        if(a !==0 && b === 0 && c === 0){
+            ketqua1 += "phương trình có nghiệm là 0";
+        }
+
+        if(a === 0 && b !==0 && c !==0 ){
+            ketqua1 += "phương trình có nghiệm x là:" + (-c/b);
+        }
+
+        if(a !==0 && b !== 0 && c !==0){
+            var delta = (b*b)-(4*a*c);
+            if (delta < 0){
+                ketqua1 += "phương trình vô nghiệm";
+            }
+            if (delta = 0){
+                ketqua1 += "phương trình có nghiệm kép" + -b/(2*a);
+            }
+            if(delta > 0){
+                ketqua1 += "phương trình có 2 nghiệm phân biệt" + (-b + Math.sqrt(delta)/(2*a)) (-b - Math.sqrt(delta)/(2*a)) 
+            }
+        }
+        document.getElementsByClassName("ketqua1")[2].innerHTML = ketqua1 ;
+    }
+    </script>
 </body>
 </html>

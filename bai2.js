@@ -10,35 +10,41 @@
 // neu delta > 0 => x1 = -(b + Math.sqrt(delta)) / 2*a , x2 = -(b - Math.sqrt(delta)) / 2*a
 
 function giaipt() {
-    var a = parseFloat(document.dataform.a.value);//parseFloat: biến kiểu string -> number 
+    var a = parseFloat(document.dataform.a.value);//parseFloat: biến kiểu string -> number nếu string là chuỗi thì nó trả về là NaN
     var b = parseFloat(document.dataform.b.value);
     var c = parseFloat(document.dataform.c.value);
     var ketqua = "Phương Trình "+ a +"x^2 +"+ b +"x "+ c + "= 0 <br>";
-    if(a === 0){
-       var  x = -c/b;
-       ketqua.x1 = x;
-       ketqua.x2 = x;
-       console.log('Phương trình có nghiệm x:',x)
-    }
-    else{
-        var delta = b*b-4*a*c;
-        if(delta < 0){
-            console.log('Phương trình vô nghiệm.');
-        }
-        if(delta === 0){
-            var x1 = -b/(2*a);
-            ketqua.x1 = x1;
-            ketqua.x2 = x1;
-            console.log('Phương trình có nghiệm kép x:',x);
-        }
-        if(delta > 0){
-            var x2 = -(b + Math.sqrt(delta)) / (2*a);
-            var x3 = -(b - Math.sqrt(delta)) / (2*a);
-            ketqua.x1 = x2;
-            ketqua.x2 = x3;
-            console.log('Phương trình có 2 nghiệm phân biệt','x1:',x2,'x2:', x3)
-        }
-        document.getElementsByClassName("ketqua")[2].innerHTML = ketqua ;
+    if (a === 0 && b === 0 && c === 0){
+        ketqua += "phương trình có vô số nghiệm";
     }
     
+    if(a === 0 && b === 0 && c !== 0){
+        ketqua += "phương trình vô nghiệm";
+    }
+    
+    if(a === 0 && b !==0 && c === 0){
+        ketqua += " phương trình có nghiệm là 0";
+    }
+
+    if(a !==0 && b === 0 && c === 0){
+        ketqua += "phương trình có nghiệm là 0";
+    }
+
+    if(a === 0 && b !==0 && c !==0 ){
+        ketqua += "phương trình có nghiệm x là:" + (-c/b);
+    }
+
+    if(a !==0 && b !== 0 && c !==0){
+        var delta = (b*b)-(4*a*c);
+        if (delta < 0){
+            ketqua += "phương trình vô nghiệm";
+        }
+        if (delta = 0){
+            ketqua += "phương trình có nghiệm kép" + -b/(2*a);
+        }
+        if(delta > 0){
+            ketqua += "phương trình có 2 nghiệm phân biệt" + (-b + Math.sqrt(delta)/(2*a)) (-b - Math.sqrt(delta)/(2*a)) 
+        }
+    }
+    document.getElementsByClassName("ketqua")[1].innerHTML = ketqua ;
 }
