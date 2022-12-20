@@ -16,7 +16,7 @@ function giaipt(){
         ketqua += "Vô nghiệm" ;
     } 
     if(a !== 0 && b !== 0) {
-        ketqua += "Có nghiệm x = " +  (-b/a);
+        ketqua += "Có nghiệm x = " + (-b/a);
     }
     document.getElementById("x").innerHTML = ketqua ;
 }

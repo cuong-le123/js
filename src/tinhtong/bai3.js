@@ -1,5 +1,5 @@
 
-function tong() {
+function tinhtong() {
     var a = document.dataform.a.value;
     var s = 0
     for(var i = 1 ; i <= a; i++){
