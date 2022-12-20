@@ -60,7 +60,7 @@ span{
 }
 
 .ketqua{
-    border: none;
+    border: 1px solid #dedce0;
     height: 100px;
     width: 300px;
     background-color: #fff;
