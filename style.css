@@ -60,10 +60,10 @@
   }
   
   .ketqua{
-      border: none;
+      border: 1px solid #dedce0;
       height: 100px;
       width: 300px;
-      background-color: #fff;
+      background-color: #dedce0;
       margin: 20px 0;
       border-radius: 5px;
   }

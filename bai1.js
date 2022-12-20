@@ -5,8 +5,8 @@
 
 
 function giaipt(){
-    var a = parseFloat(document.dataform.a.value);//parseFloat: biến kiểu string -> number 
-    var b = parseFloat(document.dataform.b.value);
+    var a = document.dataform.a.value;//parseFloat: biến kiểu string -> number 
+    var b = document.dataform.b.value;
     var ketqua = "Phương Trình "+ a +"x + "+ b +" = 0 <br>";
     if(a === 0 && b === 0 ) {
         ketqua += "Vô số nghiệm"
