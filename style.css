@@ -3,10 +3,6 @@
   box-sizing: border-box;
 }
 
-/* #main {
-    display: flex;
-} */
-
 .form-group{
     margin-bottom: 50px;
     position: relative;
@@ -66,4 +62,5 @@ span{
     background-color: #fff;
     margin: 20px 0;
     border-radius: 5px;
+    margin: 20px;
 }

@@ -5,34 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Giai thừa</title>
+    <title>Tính tổng</title>
 </head>
 <body>
     <center>
         <div id="main">
+            <h2>Tính tổng </h2>
+            <h4>Vui Lòng Nhập Giá Trị a</h4>
             <form action=""  name="dataform">
-                <h2>Giai thừa </h2>
-                <h4>Vui Lòng Nhập Giá Trị a</h4>
                 <div class="form-group">
                     <label for="a" class="form-label">Giá Trị a</label>
                     <input type="text" name="a" id="numbera" placeholder="VD: 1">
                 </div>
-                <button type="button" onclick="factorial()">Giải phương trình</button>
+                <button type="button" onclick="tong()">Tính</button>
             </form>
             <div class="khungkq">
-                <div class="ketqua"></div>
+                <div id="ketqua"></div>
             </div>
         </div>
     </center>
-    <script>
-    function factorial(a) {
-        var a = document.dataform.a.value;
-        var ketqua = "Tổng của " + a +" chữ số là: "; 
-        for(var i= 1;i<=a;i++){
-            ketqua += i+(i+1);
-        }
-    }    
-    document.getElementsByClassName("ketqua")[0].innerHTML = ketqua;
-    </script>
+    <script src="bai3.js"></script>
 </body>
 </html>
