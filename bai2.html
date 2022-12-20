@@ -1,73 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Giải phương trình bậc nhất</title>
-</head>
-<body>
-    <div id="main">
-        <form action=""  name="dataform">
-            <h2>Giải Phương Trình Bậc 2 </h2>
-            <h4>Vui Lòng Nhập Giá Trị a, b, c</h4>
-            <div class="form-group">
-                <label for="a" class="form-label">Giá Trị a</label>
-                <input type="text" name="a" id="numbera" placeholder="VD: 1">
-            </div>
-            <div class="form-group">
-                <label for="b">Giá Trị b</label>
-                <input type="text" name="b" id="numberb" placeholder="VD: 2">
-            </div>
-            <div class="form-group">
-                <label for="c">Giá Trị c</label>
-                <input type="text" name="c" id="numberc" placeholder="VD: 3">
-            </div>
-            <button type="button" onclick="giaipt()">Giải phương trình</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Giải phương trình bậc hai</title>
+  </head>
+  <body>
+    <center>
+      <div id="main">
+        <form action="" name="dataform">
+          <h2>Giải Phương Trình Bậc 2</h2>
+          <h4>Vui Lòng Nhập Giá Trị a, b, c</h4>
+          <div class="form-group">
+            <label for="a" class="form-label">Giá Trị a</label>
+            <input type="text" name="a" id="numbera" placeholder="VD: 1" />
+          </div>
+          <div class="form-group">
+            <label for="b">Giá Trị b</label>
+            <input type="text" name="b" id="numberb" placeholder="VD: 2" />
+          </div>
+          <div class="form-group">
+            <label for="c">Giá Trị c</label>
+            <input type="text" name="c" id="numberc" placeholder="VD: 3" />
+          </div>
+          <button type="button" onclick="giaipt()">Giải phương trình</button>
         </form>
-        <div class="ketqua"></div>
-    </div>
+      </div>
+      <div class="khungkq">
+        <div class="ketqua" id="ket-qua"></div>
+        <div class="ketqua" id="nghiem-1"></div>
+        <div class="ketqua" id="nghiem-2"></div>
+      </div>
+    </center>
     <script>
-        function giaipt() {
-        var a = parseFloat(document.dataform.a.value);//parseFloat: biến kiểu string -> number nếu string là chuỗi thì nó trả về là NaN
+      function giaipt() {
+        var a = parseFloat(document.dataform.a.value); //parseFloat: biến kiểu string -> number nếu string là chuỗi thì nó trả về là NaN
         var b = parseFloat(document.dataform.b.value);
         var c = parseFloat(document.dataform.c.value);
-        var ketqua = "Phương Trình "+ a +"x^2 +"+ b +"x "+ c + "= 0 <br>";
-        if (a === 0 && b === 0 && c === 0){
-            ketqua += "phương trình có vô số nghiệm";
+        let x1, x2;
+        var ketqua = "Phương Trình " + a + "x^2 +" + b + "x " + c + "= 0 <br>";
+        if (a === 0 && b === 0 && c === 0) {
+          ketqua += "phương trình có vô số nghiệm";
         }
-        
-        if(a === 0 && b === 0 && c !== 0){
+
+        if (a === 0 && b === 0 && c !== 0) {
+          ketqua += "phương trình vô nghiệm";
+        }
+
+        if (a === 0 && b !== 0 && c === 0) {
+          ketqua += " phương trình có nghiệm là 0";
+        }
+
+        if (a !== 0 && b === 0 && c === 0) {
+          ketqua += "phương trình có nghiệm là 0";
+        }
+
+        if (a === 0 && b !== 0 && c !== 0) {
+          ketqua += "phương trình có nghiệm x là:" + -c / b;
+        }
+
+        if (a !== 0 && b !== 0 && c !== 0) {
+          const delta = b * b - 4 * a * c;
+
+          if (delta < 0) {
             ketqua += "phương trình vô nghiệm";
+          }
+          if (delta === 0) {
+            ketqua += "phương trình có nghiệm kép" + -b / (2 * a);
+          }
+          if (delta > 0) {
+            ketqua += "phương trình có 2 nghiệm phân biệt x1 , x2" ;
+            x1 = -b + Math.sqrt(delta) / (2 * a);
+            x2 = -b - Math.sqrt(delta) / (2 * a);
+          }
+        document.getElementById("nghiem-1").innerHTML = x1;
+        document.getElementById("nghiem-2").innerHTML = x2;
         }
-        
-        if(a === 0 && b !==0 && c === 0){
-            ketqua += " phương trình có nghiệm là 0";
-        }
-
-        if(a !==0 && b === 0 && c === 0){
-            ketqua += "phương trình có nghiệm là 0";
-        }
-
-        if(a === 0 && b !==0 && c !==0 ){
-            ketqua += "phương trình có nghiệm x là:" + (-c/b);
-        }
-
-        if(a !==0 && b !== 0 && c !==0){
-            var delta = (b*b)-(4*a*c);
-            if (delta < 0){
-                ketqua += "phương trình vô nghiệm";
-            }
-            if (delta = 0){
-                ketqua += "phương trình có nghiệm kép" + -b/(2*a);
-            }
-            if(delta > 0){
-                ketqua += "phương trình có 2 nghiệm phân biệt" + (-b + Math.sqrt(delta)/(2*a)) (-b - Math.sqrt(delta)/(2*a)) 
-            }
-        }
-        document.getElementsByClassName("ketqua")[1].innerHTML = ketqua ;
-        }
+        document.getElementById("ket-qua").innerHTML = ketqua;
+        // document.querySelector(".ketqua").innerHTML = ketqua;
+        // document.querySelectorAll(".ketqua").innerHTML = ketqua;
+        // document.querySelector("#nghiem-2").innerHTML = ketqua;
+      }
     </script>
-</body>
+  </body>
 </html>
