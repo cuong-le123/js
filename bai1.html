@@ -24,7 +24,7 @@
                 <button type="button" onclick="giaipt()">Giải phương trình</button>
             </form>
             <div class="khungkq">
-                <div class="ketqua"></div>
+                <div id="x"></div>
             </div>
         </div>
     </center>
@@ -45,7 +45,7 @@
         if(a !== 0 && b !== 0) {
             ketqua += "Có nghiệm x = " +  (-b/a);
         }
-        document.getElementsByClassName("ketqua")[0].innerHTML = ketqua ;
+        document.getElementById("x").innerHTML = ketqua ;
     }
     </script>
 </body>
