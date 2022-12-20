@@ -2,23 +2,23 @@
 //buoc 1: nguoi dung nhap a va b 
 //buoc 2: x = -b/a
 
-var a = 0;
-var b = 6;
 
-function tinhphuongtrinhbacnhat(a1,b1) {
-    var x;
-    if(a1 === 0 && b1 === 0 ) {
-        console.log('Phương trình vô nghiệm.');
-    }else if (a1 !== 0 && b1 === 0) {
-        x = -b1/a1;
-        console.log('Phương trình có nghiệm:',x);
-    }else if (a1 === 0 && b1 !== 0){
-        console.log('Phương trình vô nghiệm.');
-    }else if(a1 !== 0 && b1 !== 0) {
-        x = -b1/a1;
-        console.log('Phương trình có nghiệm:',x);
+
+function giaipt(){
+    var a = parseFloat(document.dataform.a.value);//parseFloat: biến kiểu string -> number 
+    var b = parseFloat(document.dataform.b.value);
+    var ketqua = "Phương Trình "+ a +"x + "+ b +" = 0 <br>";
+    if(a === 0 && b === 0 ) {
+        ketqua += "Vô số nghiệm"
+    } 
+    if (a !== 0 && b === 0) {
+        ketqua += "Có nghiệm:" + (-b/a);
+    } 
+    if (a === 0 && b !== 0){
+        ketqua += "Vô nghiệm" ;
+    } 
+    if(a !== 0 && b !== 0) {
+        ketqua += "Có nghiệm x = " +  (-b/a);
     }
-    return x;
+    document.getElementsByClassName("ketqua")[0].innerHTML = ketqua ;
 }
-var kq = tinhphuongtrinhbacnhat(a,b);
-console.log(kq);

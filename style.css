@@ -35,3 +35,8 @@ label{
     transition: all 0.3s ease-in-out;
 }
 
+button{
+    height: 40px;
+    width:300px;
+}
+
