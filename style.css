@@ -1,42 +1,69 @@
 
 * {
-  box-sizing: border-box;
-}
-
-#main {
-    display: flex;
-}
-
-.form-group{
-    margin-bottom: 30px;
-    position: relative;
-}
-
-input{
-    height: 40px;
-    width:300px;
-    outline: none;
-    border: 1px solid #dedce0;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: inherit;/*inherit: dùng để kế thừa font của thẻ cha*/
-    color: #202124;
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
-
-}
-
-
-label{
-    position: absolute;
-    pointer-events: none;
-    transform: translateY(-100%);
-    background: #fff;
-    transition: all 0.3s ease-in-out;
-}
-
-button{
-    height: 40px;
-    width:300px;
-}
-
+    box-sizing: border-box;
+  }
+  
+  /* #main {
+      display: flex;
+  } */
+  
+  .form-group{
+      margin-bottom: 50px;
+      position: relative;
+  }
+  
+  h2,h4{
+      padding: 10px 0;
+  }
+  
+  input{
+      height: 40px;
+      width:300px;
+      outline: none;
+      border: 1px solid #dedce0;
+      border-radius: 5px;
+      padding: 10px;
+      color: #202124;
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+  
+  }
+  
+  
+  label{
+      position: absolute;
+      pointer-events: none;
+      transform: translateY(-120%);
+      background: #fff;
+  }
+  
+  .form-group input:focus{
+      border: 1px solid #000;
+  }
+  
+  button{
+      height: 40px;
+      width:300px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+  
+  button:hover {
+      background-color: #dedce0;
+  }
+  
+  span{
+      position: absolute;
+      transform: translateY(238%);
+      left: 0;
+  }
+  
+  .ketqua{
+      border: none;
+      height: 100px;
+      width: 300px;
+      background-color: #fff;
+      margin: 20px 0;
+      border-radius: 5px;
+  }
