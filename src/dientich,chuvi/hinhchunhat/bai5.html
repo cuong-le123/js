@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../style.css">
+    <title>Tính diện tích và chu vi hình chữ nhật</title>
+</head>
+<body>
+    <center>
+        <div id="main">
+            <form action=""  name="dataform">
+                <h2>Tính diện tích, chu vi hình chữ nhật </h2>
+                <h4>Vui lòng nhập chiều dài, chiều rộng</h4>
+                <div class="form-group">
+                    <label for="a" class="form-label">Chiều dài (m)</label>
+                    <input type="text" name="dai" id="chieudai" placeholder="VD: 1">
+                </div>
+                <div class="form-group">
+                    <label for="b">Chiều rộng (m)</label>
+                    <input type="text" name="rong" id="chieurong" placeholder="VD: 2">
+                </div>
+                <button type="button" onclick="tinhdtcv()">Tính </button>
+            </form>
+            <div class="khungkq">
+                <div id="ketqua"></div>
+            </div>
+        </div>
+    </center>
+    <script src="bai5.js"></script>
+</body>
+</html>
